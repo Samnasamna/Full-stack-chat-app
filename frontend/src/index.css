@@ -4,4 +4,13 @@
 
 :root{
   background: rgb(251, 247, 255);
+  --primary-color: #2A0E42;
+  --secondary-color: #ffffff;
+  --opacity-primary:rgba(42, 14, 66, 0.2);
+}
+[data-theme="dark"] {
+  background: rgba(23, 23, 23, 0.114);
+  --primary-color: #ffffff;
+  --secondary-color: #2A0E42;
+  --opacity-primary:rgba(255, 255, 255, 0.1);
 }

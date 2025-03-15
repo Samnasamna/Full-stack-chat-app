@@ -36,30 +36,30 @@ const SIgnUp = () => {
   }
 
   return (
-    <div className='min-h-screen grid lg:grid-cols-2 md:grid-cols-2 w-full  text-conatiner'>
+    <div className='min-h-screen grid lg:grid-cols-2 md:grid-cols-2 w-full  text-primary'>
       {/*leftSide*/}
       <div className='flex flex-col justify-center items-center p-10 lg:ml-32'>
         <div className="w-full max-w-md space-y-8">
           {/* Logo */}
           <div className="text-center mb-8">
             <div className="flex flex-col items-center gap-2 group">
-              <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center
+              <div className="size-12 rounded-xl bg-primary flex items-center justify-center
               animate-bounce transition-colors">
-                <MessageSquare className='size-6 text-conatiner'/>
+                <MessageSquare className='size-6 text-secondary '/>
               </div>
-              <h1 className="text-2xl font-bold mt-2 text-conatiner">Create Account</h1>
-              <p className='text-conatiner/60'>Get started with your free account</p>
+              <h1 className="text-2xl font-bold mt-2 text-primary">Create Account</h1>
+              <p className='text-lightShade'>Get started with your free account</p>
             </div>
           </div>
           {/* Form */}
           <form onSubmit={handleSubmit} className='space-y-6'>
             <div className="form-control space-y-2">
               <label className='label'>
-                <span className="label-text font-medium text-conatiner">Full Name</span>
+                <span className="label-text font-medium text-primary">Full Name</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <User className='size-5  text-conatiner z-50 '/>
+                  <User className='size-5  text-primary z-50 '/>
                 </div>
                 <input 
                   type="text"
@@ -73,11 +73,11 @@ const SIgnUp = () => {
 
             <div className="form-control space-y-2">
               <label className='label'>
-                <span className="label-text font-medium  text-conatiner">Email</span>
+                <span className="label-text font-medium  text-primary">Email</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail  className='size-5 text-base-content/40 z-50  text-conatiner'/>
+                  <Mail  className='size-5  z-50  text-primary'/>
                 </div>
                 <input 
                   type="email"
@@ -91,11 +91,11 @@ const SIgnUp = () => {
 
             <div className="form-control space-y-2">
               <label className='label'>
-                <span className="label-text font-medium  text-conatiner">Password</span>
+                <span className="label-text font-medium  text-primary">Password</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className='size-5 text-base-content/40 z-50  text-conatiner'/>
+                  <Lock className='size-5 z-50  text-primary'/>
                 </div>
                 <input 
                   type="password"
@@ -107,7 +107,7 @@ const SIgnUp = () => {
               </div>
             </div>
 
-            <button type='submit' className='btn bg-conatiner w-full' disabled={isSigningUp}>
+            <button type='submit' className='btn bg-primary w-full' disabled={isSigningUp}>
               {
                 isSigningUp ? (
                   <>
@@ -124,9 +124,9 @@ const SIgnUp = () => {
           </form>
 
           <div className='text-center'>
-            <p className=" text-conatiner">
+            <p className=" text-primary">
             Already have an account?{" "}
-            <Link to="/login" className='link text-primary'>Sign in</Link>
+            <Link to="/login" className='link text-lightShade'>Sign in</Link>
             </p>
           </div>
         </div>

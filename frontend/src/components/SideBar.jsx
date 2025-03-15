@@ -20,13 +20,13 @@ const SideBar = () => {
 
 
   return (
-    <div className={`w-full md:w-[15%] lg:w-[30%] h-full lg:border-r md:border-r border-r-conatiner/20 
-      drop-shadow-sm flex flex-col transition-all duration-200
+    <div className={`w-full md:w-[15%] lg:w-[30%] h-full  border-lightShade  lg:border-r md:border-r border-r-container/20 
+      drop-shadow-sm flex flex-col transition-all duration-200 
       ${selectedUser ? "hidden md:block lg:block" : ""}`}  >
       <div className="w-full p-5   drop-shadow-sm">
         <div className="flex items-center gap-2  ">
-          <Users className='size-6 text-conatiner ' />
-          <span className="font-semibold md:hidden text-lg block text-conatiner lg:block ">Contacts</span>
+          <Users className='size-6 text-primary ' />
+          <span className="font-semibold md:hidden text-lg block text-container lg:block text-primary ">Contacts</span>
         </div>
 
 
@@ -37,17 +37,19 @@ const SideBar = () => {
               type="checkbox"
               checked={showOnlineOnly}
               onChange={(e)=> setShowOnlineOnly(e.target.checked)}
-              className={`checkbox checkbox-sm border border-conatiner/50 text-conatiner `} />
-              <span className="text-sm text-conatiner/50">Show online only</span>
+              className={`checkbox checkbox-sm border border-primary text-primary `} />
+              <span className="text-sm text-gray-500">Show online only</span>
           </label>
-          <span className='text-xs text-conatiner/40'>({onlineUsers.length -1} online)</span>
+          <span className='text-xs text-gray-500'>({onlineUsers.length -1} online)</span>
         </div>
       </div>
 
 
       <div className={`overflow-auto w-full py-2  `}>
         {filteredUsers.map((user)=>{
-          return <div  key={user._id} className={`hover:bg-primary/10  p-1 transition-colors cursor-pointer ${selectedUser?._id === user._id ? "bg-primary/10 ": "" }`}
+          return <div  key={user._id} 
+          className={`hover:bg-lightShade  p-1 transition-colors cursor-pointer 
+            ${selectedUser?._id === user._id ? "bg-lightShade ": "" }`}
           onClick={()=>{setSelectedUser(user)}}>
           <button 
             className={`
@@ -61,13 +63,13 @@ const SideBar = () => {
 
               {onlineUsers.includes(user._id) && (
                 <span className="absolute bottom-0 right-0 size-3 bg-green-500 
-                rounded-full ring-2 ring-zinc-900"></span>
+                rounded-full "></span>
               )}
             </div>
 
             <div className="block lg:block md:hidden text-left min-w-0">
-              <div className="font-medium truncate text-conatiner ">{user.fullName}</div>
-              <div className="text-sm text-conatiner/40">
+              <div className="font-medium truncate text-primary ">{user.fullName}</div>
+              <div className="text-sm  text-gray-500">
                 {onlineUsers.includes(user._id)? "Online" : "Offline"}
               </div>
             </div>
@@ -76,7 +78,7 @@ const SideBar = () => {
         })}
 
         {filteredUsers.length === 0 &&(
-          <div className="text-center text-conatiner py-4">No online users</div>
+          <div className="text-center text-primary py-4">No online users</div>
         )}
       </div>
     </div>

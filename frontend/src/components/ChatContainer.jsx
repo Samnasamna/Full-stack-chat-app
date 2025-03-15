@@ -5,11 +5,13 @@ import MessageInput from './MessageInput';
 import MessageSkeleton from '../skeletons/MessageSkeleton';
 import { useAuthStore } from '../Store/UseAuthStore';
 import { formatMessageTime } from '../utils/validation';
+import useThemeStore from "../Store/useThemeStore"
 
 const ChatContainer = () => {
   const {messages, getMessages, isMessagesLoading, selectedUser, subscribeToMessages, unsubscribeFromMessages } = useChatStore();
   const {authUser} = useAuthStore();
   const messageEndRef = useRef(null)
+  const {theme} = useThemeStore()
 
   
   useEffect(()=>{
@@ -41,10 +43,10 @@ const ChatContainer = () => {
   
 
   return (
-    <div className={`flex-1 flex flex-col overflow-auto ${selectedUser && "sm:block"} w-full`}>
+    <div className={`flex-1 flex flex-col  ${selectedUser && "sm:flex"} w-full relative`}>
       <ChatHeader/>
       
-      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-white/60 h-[80%] ">
+      <div className="relative flex-1 overflow-y-auto p-4 space-y-4  h-[80%] ">
         {messages.map((message) =>{
           return <div className={`chat  ${message.senderId === authUser._id ? "chat-end" : "chat-start"} `} key={message._id} ref={messageEndRef}>
 
@@ -58,10 +60,10 @@ const ChatContainer = () => {
             </div>
 
             <div className="chat-header mb-1 ">
-              <time datetime="" className='text-xs opacity-50 ml-1 text-conatiner'>{formatMessageTime(message.createdAt)}</time>
+              <time datetime="" className='text-xs opacity-50 ml-1 text-primary'>{formatMessageTime(message.createdAt)}</time>
             </div>
 
-            <div className={`chat-bubble shadow-lg shadow-gray ${message.image && "p-1.5 rounded-lg"} flex flex-col  ${message.senderId === authUser._id ? "bg-conatiner" : "bg-white text-conatiner"} `}>
+            <div className={`chat-bubble shadow-lg shadow-gray ${message.image && "p-1.5 rounded-lg"} flex flex-col  ${message.senderId === authUser._id ? "bg-primary text-secondary":"bg-secondary text-primary"} `}>
               {message.image && (
                 <img
                   src={message.image}

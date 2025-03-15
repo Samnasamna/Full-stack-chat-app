@@ -3,7 +3,6 @@ import HomePage from "../src/Pages/HomePage"
 import Login from "../src/Pages/Login"
 import SIgnUp from "./Pages/SIgnUp"
 import ProfilePage from "../src/Pages/ProfilePage"
-import Settings from "../src/Pages/Settings"
 import { Routes, Route, Navigate } from "react-router-dom"
 import { useAuthStore } from "./Store/UseAuthStore"
 import { useEffect, useState } from "react"
@@ -27,14 +26,13 @@ function App() {
 
   return (
     <>
-    <div className="flex">
+    <div className="flex" >
       {authUser && <NavBar />}
         <Routes>
           <Route path="/" element={authUser ? <HomePage/> : <Navigate to="/login"/>}/>
           <Route path="/login" element={!authUser ? <Login/> :  <Navigate to="/"/> }/>
           <Route path="/signup" element={!authUser ? <SIgnUp/> :  <Navigate to="/"/>}/>
           <Route path="/profile" element={authUser ? <ProfilePage/> : <Navigate to="/login"/> }/>
-          <Route path="/settings" element={<Settings/>}/>
         </Routes>
 
         <Toaster/>

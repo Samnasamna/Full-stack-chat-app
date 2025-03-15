@@ -49,16 +49,16 @@ const MessageInput = () => {
   return (
     <div className='p-4 w-full '>
       {imagePreview && (
-        <div className="mb-3 flex items-center gap-2 ">
+        <div className="mb-3 flex items-center gap-2">
           <div className="relative">
             <img src={imagePreview} alt="Preview"
-            className='size-20 object-cover rounded-lg border border-conatiner' />
+            className='w-20 h-20 object-cover rounded-lg border ' />
 
             <button 
               onClick={removeImage}
-              className="absolute -top-1.5 -right-1.5 size-5 rounded-full bg-base-300
+              className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-secondary
               flex items-center justify-center" type='button'>
-                <X className='size-3 text-white'/>
+                <X className='size-3  text-primary'/>
               </button>
           </div>
         </div>
@@ -68,7 +68,7 @@ const MessageInput = () => {
         <div className="flex-1 flex gap-2 ">
           <input 
             type="text"
-            className='w-full input input-bordered rounded-lg input-sm sm:input-md bg-white text-conatiner shadow-md'
+            className='w-full input input-bordered rounded-lg input-sm sm:input-md bg-white text-black shadow-md'
             placeholder='Type a message...'
             value={text}
             onChange={(e)=> setText(e.target.value)} />
@@ -76,22 +76,22 @@ const MessageInput = () => {
             <input 
               type="file"
               accept='image/*'
-              className='hidden'
+              className='hidden '
               ref={fileInputRef}
               onChange={handleImageChange} />
 
               <button 
                 type='button'
-                className={`hidden sm:flex btn btn-circle bg-transparent border-none shadow-none 
-                ${imagePreview? "text-emerald-500" : "text-zinc-400"}`}
+                className={`hidden sm:flex btn btn-circle bg-transparent border border-none shadow-none 
+                ${imagePreview? "text-emerald-500" : "text-primary"}`}
                 onClick={()=> fileInputRef.current?.click()}>
-                  <Image size={20} className='text-conatiner '/>
+                  <Image size={20} />
                 </button>
         </div>
 
         <button
           type='submit'
-          className={` btn btn-sm btn-circle ${text?.trim() == "" && !imagePreview && "text-conatiner"  }  `}
+          className={` btn btn-sm btn-circle text-secondary bg-primary ${text?.trim() == "" && !imagePreview && "bg-primary"  }   `}
           disabled={text?.trim() == "" && !imagePreview}><Send size={20}/></button>
       </form>
 

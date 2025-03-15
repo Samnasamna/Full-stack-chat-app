@@ -4,12 +4,12 @@ import React from 'react'
 const SideBarSkeleton = () => {
     const skeletonContacts = Array(8).fill(null)
   return (
-    <aside className='h-full w-[20%] lg:w-[40%] border-r-2 border-conatiner flex flex-col transition-all duaration-200'>
+    <aside className='h-full w-[20%] lg:w-[40%] border-r-2 border-container flex flex-col transition-all duaration-200'>
         {/* Header */}
-        <div className="border-b-2 border-conatiner w-full p-5">
+        <div className="border-b-2 border-container w-full p-5">
             <div className="flex items-center gap-3">
-                <Users className='size-6 text-conatiner'/>
-                <span className="font-medium hidden lg:block text-conatiner">Contacts</span>
+                <Users className='size-6 text-container'/>
+                <span className="font-medium hidden lg:block text-container">Contacts</span>
             </div>
         </div>
         {/* Skeleton contacts */}

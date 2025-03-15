@@ -34,27 +34,27 @@ const Login = () => {
 
 
   return (
-    <div className='min-h-screen  grid lg:grid-cols-2 md:grid-cols-2 w-full text-conatiner p-4'>
+    <div className='min-h-screen  grid lg:grid-cols-2 md:grid-cols-2 w-full text-primary p-4'>
       {/*leftSide*/}
       <div className='flex flex-col justify-center items-center p-10 lg:ml-32 '>
         <div className="w-full max-w-md space-y-8">
           {/* Logo */}
           <div className="text-center mb-8">
             <div className="flex flex-col items-center gap-2 group">
-              <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center
+              <div className="size-12 rounded-xl bg-primary text-secondary flex items-center justify-center
               animate-bounce transition-colors">
-                <MessageSquare className='size-6 text-conatiner'/>
+                <MessageSquare className='size-6 text-secondary'/>
               </div>
-              <h1 className="text-2xl font-bold mt-2 text-conatiner">Welcome Back</h1>
-              <p className='text-conatiner/60 text-sm'>Sign in to your account</p>
+              <h1 className="text-2xl font-bold mt-2 text-primary">Welcome Back</h1>
+              <p className='text-lightShade text-sm'>Sign in to your account</p>
             </div>
           </div>
           {/* Form */}
           <form onSubmit={handleSubmit} className='space-y-6  '>
 
-            <div className="form-control space-y-2 text-conatiner">
+            <div className="form-control space-y-2 ">
               <label className='label'>
-                <span className="label-text font-medium text-conatiner ">Email</span>
+                <span className="label-text font-medium text-primary ">Email</span>
               </label>
               <div className="relative  ">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -72,11 +72,11 @@ const Login = () => {
 
             <div className="form-control space-y-2">
               <label className='label'>
-                <span className="label-text font-medium text-conatiner">Password</span>
+                <span className="label-text font-medium text-pimary">Password</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className='size-5 text-conatiner  z-50 '/>
+                  <Lock className='size-5 text-primary  z-50 '/>
                 </div>
                 <input 
                   type="password"
@@ -88,7 +88,7 @@ const Login = () => {
               </div>
             </div>
 
-            <button type='submit' className='btn bg-conatiner w-full' disabled={isLoggingIn}>
+            <button type='submit' className='btn bg-primary text-secondary w-full' disabled={isLoggingIn}>
               {
                 isLoggingIn ? (
                   <>
@@ -105,9 +105,9 @@ const Login = () => {
           </form>
 
           <div className='text-center'>
-            <p className="text-conatiner">
+            <p className="text-primary">
            New user?{" "}
-            <Link to="/signup" className='link text-primary'>create new account</Link>
+            <Link to="/signup" className='link text-lightShade'>create new account</Link>
             </p>
           </div>
         </div>
