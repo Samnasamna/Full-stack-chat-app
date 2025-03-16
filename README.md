@@ -66,5 +66,6 @@ npm start
 npm run dev --prefix frontend
 ```
 
-![Screenshot (8)](https://github.com/user-attachments/assets/ba5a211f-2e32-439d-8afb-605856a09078)
+![Screenshot (8)](https://github.com/user-attachments/assets/7d2f85f2-ddad-41f7-8d3e-142109d15fc6)
+
 
