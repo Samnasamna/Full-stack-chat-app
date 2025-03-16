@@ -2,7 +2,7 @@
 
 A full-stack real-time chat application built with **Node.js, React, MongoDB, and Socket.io**, containerized in a single project folder. It supports **real-time messaging, JWT authentication, user profile management, and proper error handling**.
 
-![image](https://github.com/user-attachments/assets/e342b0e1-3550-4410-bb67-927dfa4d10bc)
+
 
 ## Features
 
@@ -59,7 +59,12 @@ npm run build
 npm start
 ```
 
+
+
 ### 5. frontend setup for development
 ```sh
 npm run dev --prefix frontend
 ```
+
+![Screenshot (8)](https://github.com/user-attachments/assets/ba5a211f-2e32-439d-8afb-605856a09078)
+
