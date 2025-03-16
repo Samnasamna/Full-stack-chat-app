@@ -2,12 +2,12 @@ import React from 'react'
 import { useChatStore } from '../Store/useChatStore'
 import { useAuthStore } from '../Store/UseAuthStore'
 import { X } from 'lucide-react';
-import useThemeStore from "../Store/useThemeStore"
+
 
 const ChatHeader = () => {
     const {selectedUser, setSelectedUser} = useChatStore();
     const {onlineUsers} = useAuthStore();
-    const {theme} = useThemeStore()
+
   return (
     <div className={`p-3  border-b  border-lightShade `}>
         <div className="flex items-center justify-between">

@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-    <div className="flex" >
+    <div className="flex " >
       {authUser && <NavBar />}
         <Routes>
           <Route path="/" element={authUser ? <HomePage/> : <Navigate to="/login"/>}/>

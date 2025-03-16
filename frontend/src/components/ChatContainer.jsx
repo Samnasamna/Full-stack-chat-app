@@ -5,13 +5,11 @@ import MessageInput from './MessageInput';
 import MessageSkeleton from '../skeletons/MessageSkeleton';
 import { useAuthStore } from '../Store/UseAuthStore';
 import { formatMessageTime } from '../utils/validation';
-import useThemeStore from "../Store/useThemeStore"
 
 const ChatContainer = () => {
   const {messages, getMessages, isMessagesLoading, selectedUser, subscribeToMessages, unsubscribeFromMessages } = useChatStore();
   const {authUser} = useAuthStore();
   const messageEndRef = useRef(null)
-  const {theme} = useThemeStore()
 
   
   useEffect(()=>{
@@ -43,10 +41,10 @@ const ChatContainer = () => {
   
 
   return (
-    <div className={`flex-1 flex flex-col  ${selectedUser && "sm:flex"} w-full relative`}>
+    <div className={`flex-1 flex flex-col  ${selectedUser && "sm:flex"} w-full relative `}>
       <ChatHeader/>
       
-      <div className="relative flex-1 overflow-y-auto p-4 space-y-4  h-[80%] ">
+      <div className="relative flex-1 overflow-y-auto p-4 space-y-4  ">
         {messages.map((message) =>{
           return <div className={`chat  ${message.senderId === authUser._id ? "chat-end" : "chat-start"} `} key={message._id} ref={messageEndRef}>
 

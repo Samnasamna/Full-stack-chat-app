@@ -1,9 +1,9 @@
-import { Coffee, MessageSquare } from 'lucide-react'
+import { Coffee } from 'lucide-react'
 import React from 'react'
-import useThemeStore from '../Store/useThemeStore'
+
 
 const NoChatSelected = () => {
-  const {theme, te} = useThemeStore();
+
   return (
     <div className=' hidden md:flex lg:flex w-full flex-col items-center justify-center p-16 bg-transparent'>
       <div className="max-w-md text-center space-y-6">

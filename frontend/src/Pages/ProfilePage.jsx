@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { useAuthStore } from '../Store/UseAuthStore';
 import { Camera, LogOut, Mail, User } from 'lucide-react';
-import useThemeStore from '../Store/useThemeStore'
+
 
 const ProfilePage = () => {
 
   const {authUser, isUpdatingProfile, updateProfile, logout} = useAuthStore();
   const [selectedImage, setSelectedImage] = useState(null)
-  const {theme} = useThemeStore();
+
 
   const handleImageUpload = async (e)=>{
     const file = e.target.files[0];
